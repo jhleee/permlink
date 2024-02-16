@@ -1,12 +1,15 @@
 <h1>
 v6
 </h1>
-
-<input type="text" />
-
-<script>
-document.querySelector("input").addEventListener("keydown", (e) => {
-    console.log(e.target.value)
+<input id="x" />
+<pre id="y"></pre>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+  integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+  crossorigin="anonymous">
+ </script>
+ <script>
+  $("#x").on("keydown", function(e) {
     fetch("/echo/json/", {
       method: "POST",
       headers: {
@@ -14,6 +17,8 @@ document.querySelector("input").addEventListener("keydown", (e) => {
       },
       body: e.target.value
     })
-    console.log(e.target.value)
+    $("#y").text(e.target.value)
   })
-</script>
+     
+  })
+  </script>
