@@ -1,5 +1,5 @@
 <h1>
-v7
+v8
   
 </h1>
 <input id="x" />
@@ -10,6 +10,8 @@ v7
   crossorigin="anonymous">
  </script>
  <script>
+   $(document).ready(()=>{
+     
   $("#x").on("keydown", function(e) {
     fetch("/echo/json/", {
       method: "POST",
@@ -22,4 +24,6 @@ v7
   })
      
   })
+   
+   });
   </script>
