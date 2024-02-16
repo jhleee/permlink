@@ -1,16 +1,15 @@
 <h1>
-  v10
-
+  v11
 </h1>
+
 <input id="x" />
 <pre id="y"></pre>
-<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js">
-</script>
-<script>
-  $(document).ready(() => {
 
-  $("#x").on("keydown", function(e) {
-    fetch("/echo/json/", {
+<script>
+window.onload = ()=> {
+document.querySelector("#x").addEventListener("change", (e)=> {
+  
+    fetch("/message", {
       method: "POST",
       headers: {
         'Content-Type': 'text/plain'
@@ -18,8 +17,6 @@
       body: e.target.value
     })
     $("#y").text(e.target.value)
-  })
-
-  })
-
-</script>
+  
+})
+}</script>
