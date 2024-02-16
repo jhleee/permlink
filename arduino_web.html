@@ -1,0 +1,19 @@
+<h1>
+v3
+</h1>
+<script>
+  async function keydown(e) {
+    console.log(e.target.value)
+    await fetch("/echo/json/", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'text/plain'
+      },
+      body: e.target.value
+    })
+    console.log(e.target.value)
+  }
+</script>
+
+
+<input type="text" onkeydown="keydown(event)" />
