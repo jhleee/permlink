@@ -1,12 +1,11 @@
 <h1>
-  v11
+  v12
 </h1>
 
 <input id="x" />
 <pre id="y"></pre>
 
 <script>
-window.onload = ()=> {
 document.querySelector("#x").addEventListener("change", (e)=> {
   
     fetch("/message", {
@@ -18,5 +17,4 @@ document.querySelector("#x").addEventListener("change", (e)=> {
     })
     $("#y").text(e.target.value)
   
-})
-}</script>
+})</script>
