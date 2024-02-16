@@ -1,26 +1,23 @@
 <h1>
-  v18
+  v19
 </h1>
 
 <input id="x" />
 <pre id="y"></pre>
 
 <script type="text/javascript">
-  let lastTime = 0; // 마지막으로 요청을 보낸 시간을 추적합니다.
+  let debounceTimeout; // 디바운스를 위한 타이머
 
-  document.querySelector("#x").addEventListener("keyup", (e) => {
-    const now = new Date().getTime(); // 현재 시간을 가져옵니다.
+  document.querySelector("#x").addEventListener("change", (e) => {
+    clearTimeout(debounceTimeout); // 기존 타이머가 있다면 취소
 
-    // 마지막 요청으로부터 0.5초 이상 지났는지 확인합니다.
-    if (now - lastTime > 500) {
+    debounceTimeout = setTimeout(() => {
       fetch("/message", {
         method: "POST",
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         body: "message=" + encodeURIComponent(e.target.value)
       });
       document.querySelector("#y").textContent = e.target.value;
-
-      lastTime = now; // 마지막 요청 시간을 업데이트합니다.
-    }
+    }, 500); // 0.5초 후에 함수 실행
   });
 </script>
