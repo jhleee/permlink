@@ -1,5 +1,5 @@
 <h1>
-  v17
+  v18
 </h1>
 
 <input id="x" />
@@ -8,7 +8,7 @@
 <script type="text/javascript">
   let lastTime = 0; // 마지막으로 요청을 보낸 시간을 추적합니다.
 
-  document.querySelector("#x").addEventListener("change", (e) => {
+  document.querySelector("#x").addEventListener("keyup", (e) => {
     const now = new Date().getTime(); // 현재 시간을 가져옵니다.
 
     // 마지막 요청으로부터 0.5초 이상 지났는지 확인합니다.
