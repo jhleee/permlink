@@ -1,5 +1,5 @@
 <h1>
-  v19
+  v19.1
 </h1>
 
 <input id="x" />
@@ -8,7 +8,7 @@
 <script type="text/javascript">
   let debounceTimeout; // 디바운스를 위한 타이머
 
-  document.querySelector("#x").addEventListener("change", (e) => {
+  document.querySelector("#x").addEventListener("keyup", (e) => {
     clearTimeout(debounceTimeout); // 기존 타이머가 있다면 취소
 
     debounceTimeout = setTimeout(() => {
