@@ -1,5 +1,5 @@
 <h1>
-  v12
+  v13
 </h1>
 
 <input id="x" />
@@ -15,6 +15,6 @@ document.querySelector("#x").addEventListener("change", (e)=> {
       },
       body: e.target.value
     })
-    $("#y").text(e.target.value)
+   document.querySelector("#x").contentText = e.target.value;
   
 })</script>
